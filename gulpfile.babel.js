@@ -6,6 +6,7 @@ import autoprefixer from "gulp-autoprefixer";
 
 sass.compiler = require("node-sass");
 
+
 const routes = {
   css: {
     watch: "src/scss/*",
@@ -14,7 +15,8 @@ const routes = {
   }
 };
 
-const styles = () =>
+
+const task_styles = () =>
   gulp
     .src(routes.css.src)
     .pipe(sass().on("error", sass.logError))
@@ -27,16 +29,16 @@ const styles = () =>
     .pipe(minify())
     .pipe(gulp.dest(routes.css.dest));
 
-const watch = () => {
+const task_watch = () => {
   gulp.watch(routes.css.watch, styles);
 };
 
-const clean = () => del(["dest/"]);
+const task_clean = () => del(["dest/"]);
 
-const prepare = gulp.series([clean]);
 
-const assets = gulp.series([styles]);
+const prepare = gulp.series([task_clean]);
+const assets = gulp.series([task_styles]);
+const live = gulp.parallel([task_watch]);
 
-const live = gulp.parallel([watch]);
 
 export const dev = gulp.series([prepare, assets, live]);
