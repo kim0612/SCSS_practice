@@ -30,7 +30,7 @@ const task_styles = () =>
     .pipe(gulp.dest(routes.css.dest));
 
 const task_watch = () => {
-  gulp.watch(routes.css.watch, styles);
+  gulp.watch(routes.css.watch, task_styles);
 };
 
 const task_clean = () => del(["dest/"]);
