@@ -1,10 +1,39 @@
+@import "_variables.scss";
+@import "_mixins.scss";
+@import "_extends.scss";
+@import url('https://rsms.me/inter/inter.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+
 body {
-  background: peru;
-  a {
-    color: blue;
+  background: lightgrey;
+  font-family:  'Inter','Noto Sans KR', sans-serif;
+  display: inline-block;
+}
+
+.content{
+  border: solid 1px;
+  padding: 10px;
+  margin-bottom: 10px;
+  .link1 {
+    @extend %links;
+  }
+  .box1{
+    color:  #9713cc;
+    .hangeul{
+      letter-spacing: -0.07em;
+      color: #575d21;
+    }
   }
 }
 
-div {
-  background: yellow;
+.login {
+  @extend %buttons;
+  text-decoration: none;
 }
+button{
+  @extend %buttons;
+  border: none;
+  cursor: pointer;
+}
+
+
