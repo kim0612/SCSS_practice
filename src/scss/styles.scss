@@ -4,8 +4,12 @@
 @import url('https://rsms.me/inter/inter.css');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 
+html{
+  font-size: 0.925vw; //100vw가 1080px일 때, 10px
+}
+
 body {
-  background: lightgrey;
+  background: white;
   font-family:  'Inter','Noto Sans KR', sans-serif;
   display: inline-block;
 }
@@ -36,4 +40,9 @@ button{
   cursor: pointer;
 }
 
-
+nav{
+  color: white;
+  -webkit-text-stroke: 0.5px #707070;
+  font-weight: 600;
+  font-size: 1.6rem;
+}
